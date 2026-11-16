@@ -28,6 +28,15 @@ claude plugin install todo-dashboard --marketplace Sadacan/claude-mods
 
 In der Desktop-App: + neben dem Eingabefeld → Plugins → Add marketplace mit `Sadacan/claude-mods` → Add plugin.
 
+## Handy und Tablet
+
+Cloud-Sitzungen aus der Claude-App auf Handy oder Tablet bekommen die Mods genauso (über das Setup-Skript der Umgebung). Dort:
+
+- Fenster wie die To-do-Liste öffnen sich nicht von selbst, sondern über die Leiste „To-dos · Öffnen“ über dem Eingabefeld oder über das Mods-Menü der App.
+- Aufgaben tippst du ins Eingabefeld der Liste, ohne `/todo`-Befehle.
+- Das Limit steht ab 50 % als Leiste über dem Eingabefeld, bei 95 % kommt eine Benachrichtigung.
+- Alle Befehle (`/todo`, `/limit`, `/schnell …`) gehen auch dort.
+
 ## Bedienung
 
 ### todo-dashboard
@@ -43,11 +52,11 @@ In der Desktop-App: + neben dem Eingabefeld → Plugins → Add marketplace mit 
 | `/todo aufräumen` | alle erledigten entfernen |
 | `/todo liste` | Liste als Text |
 
-Im Fenster haken `[ ]` und `x` direkt ab oder löschen.
+Im Fenster gibt es oben ein Eingabefeld für neue Aufgaben; `[ ]` hakt ab, `x` löscht. Über dem Eingabefeld des Chats zeigt eine kleine Leiste „To-dos: 3 offen · Öffnen“.
 
 ### limit-anzeige
 
-Zeigt in der Statuszeile z. B. `Limit 5 Std 23 % · 7 Tage 41 %`. Bei 80 % und bei 95 % eines Fensters kommt einmal eine Warnung. `/limit` zeigt alle Werte mit Reset-Zeit, Kontextfüllung und Kosten. Die Werte gibt es nur bei Abo-Konten und erst nach der ersten Antwort.
+Zeigt in der Statuszeile z. B. `Limit 5 Std 23 % · 7 Tage 41 %`. Bei 80 % und bei 95 % eines Fensters kommt einmal eine Warnung. `/limit` zeigt alle Werte mit Reset-Zeit, Kontextfüllung und Kosten. Ab 50 % erscheint eine Leiste über dem Eingabefeld (gelb ab 80 %, rot ab 95 %), bei 95 % zusätzlich eine Benachrichtigung. Die Werte gibt es nur bei Abo-Konten und erst nach der ersten Antwort.
 
 ### komfort-extras
 

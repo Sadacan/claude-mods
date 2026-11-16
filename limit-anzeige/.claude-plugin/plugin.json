@@ -1,1 +1,1 @@
-{ "name": "limit-anzeige", "version": "0.1.0", "description": "Nutzungslimit in der Statuszeile, Warnung bei 80 % und 95 %, Befehl /limit" }
+{ "name": "limit-anzeige", "version": "0.2.0", "description": "Nutzungslimit in der Statuszeile, Warnung bei 80 % und 95 %, Befehl /limit", "types": "./types/index.d.ts" }

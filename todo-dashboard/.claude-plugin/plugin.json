@@ -1,1 +1,1 @@
-{ "name": "todo-dashboard", "version": "0.1.0", "description": "To-do-Fenster neben dem Chat, Befehl /todo", "types": "./types/index.d.ts" }
+{ "name": "todo-dashboard", "version": "0.2.0", "description": "To-do-Fenster neben dem Chat, Befehl /todo", "types": "./types/index.d.ts" }

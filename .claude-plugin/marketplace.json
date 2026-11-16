@@ -1,10 +1,39 @@
 {
   "name": "claude-mods",
-  "owner": { "name": "Sadacan" },
+  "owner": {
+    "name": "Sadacan"
+  },
   "plugins": [
-    { "name": "todo-dashboard", "source": "./todo-dashboard", "description": "To-do-Fenster neben dem Chat, Befehl /todo" },
-    { "name": "limit-anzeige", "source": "./limit-anzeige", "description": "Nutzungslimit in der Statuszeile, Warnung bei 80 % und 95 %, Befehl /limit" },
-    { "name": "komfort-extras", "source": "./komfort-extras", "description": "Dauer der letzten Antwort, Schutz vor gefährlichen Befehlen und .env-Änderungen" },
-    { "name": "kosten-sparer", "source": "./kosten-sparer", "description": "/schnell <Aufgabe> schickt einfache Aufgaben an Haiku und schont das Limit" }
-  ]
+    {
+      "name": "todo-dashboard",
+      "source": "./todo-dashboard",
+      "description": "To-do-Fenster neben dem Chat, Befehl /todo"
+    },
+    {
+      "name": "limit-anzeige",
+      "source": "./limit-anzeige",
+      "description": "Nutzungslimit in der Statuszeile, Warnung bei 80 % und 95 %, Befehl /limit"
+    },
+    {
+      "name": "komfort-extras",
+      "source": "./komfort-extras",
+      "description": "Dauer der letzten Antwort, Schutz vor gefährlichen Befehlen und .env-Änderungen"
+    },
+    {
+      "name": "kosten-sparer",
+      "source": "./kosten-sparer",
+      "description": "/schnell <Aufgabe> schickt einfache Aufgaben an Haiku und schont das Limit"
+    },
+    {
+      "name": "spar-modus",
+      "source": "./spar-modus",
+      "description": "Wählt pro Aufgabe automatisch das passende Modell und spart Tokens, Befehl /modell"
+    },
+    {
+      "name": "gehirn",
+      "source": "./gehirn",
+      "description": "Speichert jede Antwort dauerhaft in deinem Gehirn und gibt Claude Zugriff darauf, Befehl /gehirn"
+    }
+  ],
+  "description": "Sadacans Mods für Claude Code"
 }

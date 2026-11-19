@@ -1,1 +1,1 @@
-{ "name": "gehirn", "version": "0.1.0", "description": "Speichert jede Antwort dauerhaft in deinem Gehirn und gibt Claude Zugriff darauf, Befehl /gehirn" }
+{ "name": "gehirn", "version": "0.2.0", "description": "Speichert jede Antwort dauerhaft in deinem Gehirn und gibt Claude Zugriff darauf, Befehl /gehirn" }

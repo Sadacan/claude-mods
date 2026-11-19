@@ -11,7 +11,7 @@ const HINWEIS = [
   '# Gedächtnis des Nutzers ("Gehirn")',
   `Alle früheren Gespräche aus Code-Sitzungen und die Notizen des Nutzers liegen dauerhaft im Artifact ${GEHIRN_URL} (slug ${GEHIRN_SLUG}), Sammlung "eintraege".`,
   'Felder: art ("code" oder "notiz"), ts (ms), projekt, frage, antwort. Neue Einträge legt der Mod "gehirn" selbst an; schreibe nicht selbst hinein, außer der Nutzer bittet dich, sich etwas zu merken (dann art "notiz").',
-  `Lies es, wenn der Nutzer sich auf Früheres bezieht ("wie letztes Mal", "mein Projekt", "weißt du noch") oder dir Hintergrund fehlt: mcp__claude-artifacts__db_query mit slug ${GEHIRN_SLUG}, collection "eintraege", orderBy "-ts", limit 30 (gezielt mit where projekt oder art "notiz"). Lies es nicht ohne Anlass, das spart Tokens.`,
+  `Lies es, wenn der Nutzer sich auf Früheres bezieht ("wie letztes Mal", "mein Projekt", "weißt du noch") oder dir Hintergrund fehlt: mit dem Werkzeug ArtifactData, action "query", url ${GEHIRN_URL}, collection "eintraege", query { order_by: { field: "ts", direction: "desc" }, limit: 30 } (gezielt mit where projekt oder art "notiz"). Lies es nicht ohne Anlass, das spart Tokens.`,
 ].join('\n')
 
 let projekt = ''
@@ -23,14 +23,30 @@ const kurz = (s: string, n: number) => (s.length > n ? `${s.slice(0, n)} …` : 
 async function merken($: EngineInterface, daten: Record<string, unknown>) {
   const ts = await $.clock.now()
   const id = `${sitzung}-${ts}`
+  const data = { ts, ...daten }
+  // Weg 1: die Artifact-Verbindung der Sitzung, wenn es sie gibt.
   try {
     const r = await $.mcp.call(SERVER, 'db_write', {
       slug: GEHIRN_SLUG,
-      ops: [{ op: 'set', path: `eintraege/${id}`, data: { ts, ...daten } }],
+      ops: [{ op: 'set', path: `eintraege/${id}`, data }],
     })
-    if (r.isError) $.ui.log(`gehirn: Speichern abgelehnt`)
+    if (!r.isError) return
   } catch {
-    // Kein Gehirn erreichbar (z. B. Sitzung ohne Artifact-Verbindung): still weitermachen.
+    // weiter mit Weg 2
+  }
+  // Weg 2: das eingebaute Werkzeug ArtifactData (braucht die Erlaubnis-Regel "ArtifactData").
+  try {
+    const r = await $.tool.call({
+      tool: 'ArtifactData',
+      action: 'set',
+      url: GEHIRN_URL,
+      collection: 'eintraege',
+      doc_id: id,
+      data,
+    } as never)
+    if ('deny' in r && r.deny !== undefined) $.ui.log(`gehirn: Speichern nicht erlaubt (${r.deny})`)
+  } catch {
+    $.ui.log('gehirn: Gehirn nicht erreichbar, Eintrag übersprungen')
   }
 }
 

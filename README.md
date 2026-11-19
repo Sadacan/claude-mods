@@ -87,4 +87,4 @@ Einzelne Nachricht erzwingen: mit `!stark`, `!mittel` oder `!schnell` beginnen.
 
 ### gehirn
 
-Nach jeder Antwort in einer Code-Sitzung speichert der Mod Frage und Antwort (gekürzt) in deinem Gehirn, einer privaten Claude-Seite: https://claude.ai/artifact/HnHmcM42G7XrYi7AAsvxji. Claude weiß davon und liest dort nach, wenn du dich auf Früheres beziehst. `/gehirn <Text>` merkt sich eine Notiz, `/gehirn` zeigt den Link. Auf der Seite kannst du suchen, Notizen eintragen und Einträge vergessen.
+Nach jeder Antwort in einer Code-Sitzung speichert der Mod Frage und Antwort (gekürzt) in deinem Gehirn, einer privaten Claude-Seite: https://claude.ai/artifact/HnHmcM42G7XrYi7AAsvxji. Claude weiß davon und liest dort nach, wenn du dich auf Früheres beziehst. Gespeichert wird über die Artifact-Verbindung der Sitzung oder, wenn die fehlt, über das eingebaute Werkzeug ArtifactData. Für den zweiten Weg braucht es die Erlaubnis-Regel `ArtifactData`. `/gehirn <Text>` merkt sich eine Notiz, `/gehirn` zeigt den Link. Auf der Seite kannst du suchen, Notizen eintragen und Einträge vergessen.

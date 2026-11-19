@@ -1,0 +1,1 @@
+{ "name": "ausgabe-kuerzer", "version": "0.1.0", "description": "Kürzt lange Befehlsausgaben, bevor sie den Kontext füllen; die volle Ausgabe liegt in einer Datei" }

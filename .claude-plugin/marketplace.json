@@ -33,6 +33,11 @@
       "name": "gehirn",
       "source": "./gehirn",
       "description": "Speichert jede Antwort dauerhaft in deinem Gehirn und gibt Claude Zugriff darauf, Befehl /gehirn"
+    },
+    {
+      "name": "ausgabe-kuerzer",
+      "source": "./ausgabe-kuerzer",
+      "description": "Kürzt lange Befehlsausgaben, bevor sie den Kontext füllen; die volle Ausgabe liegt in einer Datei"
     }
   ],
   "description": "Sadacans Mods für Claude Code"

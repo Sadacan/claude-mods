@@ -10,6 +10,7 @@ Meine Mods für Claude, in jeder Sitzung installierbar.
 | kosten-sparer | `/schnell <Aufgabe>` schickt einfache Aufgaben an Haiku und schont das Limit |
 | spar-modus | Wählt pro Aufgabe automatisch Haiku, Sonnet oder das starke Modell, knappe Antworten, Befehl `/modell` |
 | gehirn | Speichert jede Antwort dauerhaft in deinem Gehirn, Claude liest bei Bedarf nach, Befehl `/gehirn` |
+| ausgabe-kuerzer | Kürzt lange Befehlsausgaben (Logs, Tests, Installationen) auf Anfang und Ende, bevor sie den Kontext füllen; die volle Ausgabe liegt in `/tmp/claude-ausgaben` |
 
 ## Installieren
 
@@ -21,6 +22,7 @@ Im Terminal einer Claude-Sitzung (je Mod ein Aufruf, `y` für den Marketplace, d
 /plugin install komfort-extras --marketplace Sadacan/claude-mods
 /plugin install kosten-sparer --marketplace Sadacan/claude-mods
 /plugin install spar-modus --marketplace Sadacan/claude-mods
+/plugin install ausgabe-kuerzer --marketplace Sadacan/claude-mods
 /plugin install gehirn --marketplace Sadacan/claude-mods
 ```
 

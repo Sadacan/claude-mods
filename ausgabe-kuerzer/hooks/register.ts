@@ -1,9 +1,9 @@
 import type { EngineInterface, Register, ToolCallResult } from 'claude-code'
 
-// Ab dieser Länge (Zeichen, etwa 2000 Tokens) wird gekürzt.
-const GRENZE = 8000
-const KOPF = 3000
-const ENDE = 4000
+// Ab dieser Länge (Zeichen, etwa 1500 Tokens) wird gekürzt.
+const GRENZE = 6000
+const KOPF = 2000
+const ENDE = 3000
 const ORDNER = '/tmp/claude-ausgaben'
 // Befehle, deren Ausgabe Claude bewusst ganz lesen will (Dateiinhalt, Diffs).
 const VOLL = /(#\s*voll\b)|^\s*(cat|sed|head|tail|awk|jq|diff|less|nl)\b|\bgit\s+(diff|show)\b/

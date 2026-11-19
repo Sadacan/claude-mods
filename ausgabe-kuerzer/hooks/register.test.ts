@@ -8,7 +8,7 @@ test('lange Ausgabe wird gekürzt und gespeichert', async ($, on) => {
   on('tool.call', () => ({ result: { stdout: lang, stderr: '', interrupted: false } }))
   const r = await $.tool.call({ tool: 'Bash', command: 'npm test' })
   const out = (r.result as { stdout: string }).stdout
-  expect(out.length < 8000).toBe(true)
+  expect(out.length < 6000).toBe(true)
   expect(out.includes('Zeile 0 ok')).toBe(true)
   expect(out.includes('Zeile 1999 ok')).toBe(true)
   expect(out.includes('gekürzt')).toBe(true)
